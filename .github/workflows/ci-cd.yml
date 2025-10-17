@@ -18,13 +18,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 #Download repository content into the runner
 
       - name: Set up Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v3 #Initialize docker
 
       - name: Cache Docker layers
-        uses: actions/cache@v4
+        uses: actions/cache@v4 #Stores and restores each layer of the image to save time and resources if the image has been previusly build
         with:
           path: /tmp/.buildx-cache
           key: buildx-${{ runner.os }}-${{ github.ref }}
